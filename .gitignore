@@ -97,3 +97,8 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Temporary build artifacts
+tmp/
+temp/
+*.zip

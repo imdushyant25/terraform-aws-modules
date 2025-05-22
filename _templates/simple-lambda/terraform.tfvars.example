@@ -1,0 +1,62 @@
+# templates/simple-lambda/terraform.tfvars.example
+# Copy this file to terraform.tfvars and customize for your project
+
+# Required: Basic project information
+function_name    = "my-awesome-function"
+team_name       = "backend-team"
+project_name    = "My Awesome Project"
+team_email      = "backend-team@company.com"
+
+# Optional: Function configuration
+function_description = "My awesome Lambda function that does amazing things"
+runtime             = "python3.11"
+handler             = "app.lambda_handler"
+timeout             = 60
+memory_size         = 256
+
+# Optional: Environment and deployment
+aws_region  = "us-east-1"
+environment = "dev"
+
+# Optional: Environment variables for your function
+environment_variables = {
+  LOG_LEVEL    = "INFO"
+  API_BASE_URL = "https://api.example.com"
+  TIMEOUT      = "30"
+}
+
+# Optional: Additional AWS permissions your function needs
+additional_policies = [
+  # Example: DynamoDB access
+  # {
+  #   Effect = "Allow"
+  #   Action = [
+  #     "dynamodb:GetItem",
+  #     "dynamodb:PutItem",
+  #     "dynamodb:UpdateItem"
+  #   ]
+  #   Resource = [
+  #     "arn:aws:dynamodb:us-east-1:*:table/my-table"
+  #   ]
+  # },
+  # Example: S3 access
+  # {
+  #   Effect = "Allow"
+  #   Action = [
+  #     "s3:GetObject",
+  #     "s3:PutObject"
+  #   ]
+  #   Resource = [
+  #     "arn:aws:s3:::my-bucket/*"
+  #   ]
+  # }
+]
+
+# Optional: Additional tags
+tags = {
+  CostCenter = "Engineering"
+  Purpose    = "Data Processing"
+}
+
+# Optional: Monitoring
+create_dashboard = true
